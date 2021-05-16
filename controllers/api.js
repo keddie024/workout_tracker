@@ -19,4 +19,14 @@ router.get("/api/workouts", (req, res) => {
         });
 });
 
+router.post('/api/workouts', (req, res) => {
+    Workout.create({})
+        .then((newWorkout) => {
+            res.json(newWorkout);
+        })
+        .catch((err) => {
+            res.json(err);
+        });
+});
+
 module.exports = router;
